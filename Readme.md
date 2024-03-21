@@ -14,6 +14,6 @@ GreatNotes is a simple and intuitive web application designed to help students m
 8. **Store Definitions**: Users can store definitions of terms, which can be helpful for their studies.
 9. **Summarizer**: Users can use a summarizer to get a summary of a particular paragraph entered.
 10. **To-Do List**: Users can create a to-do list to complete tasks set by them.
-
+* * *
 ### About The Creator ->
 Hey Everyone , This is Piyush from squad 49 of Kalvium x Rv University. This is my project about Students managing their notes in an effective manner. I also added different featured like embeding YouTube videos, voice recordings, Images etc as students requires. 
