@@ -12,6 +12,10 @@ app.post('/',async(req,res)=>{
   res.json({message:"Post Request Accepted.."})
 })
 
+app.put('/',async(req,res)=>{
+  res.json({message:"Put Request Accepted.."})
+})
+
 if (require.main === module) {
     app.listen(port,() => {
       console.log(`Server running on port: ${port}`);
