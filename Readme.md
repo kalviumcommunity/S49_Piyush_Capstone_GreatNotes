@@ -17,3 +17,6 @@ GreatNotes is a simple and intuitive web application designed to help students m
 * * *
 ### About The Creator ->
 Hey Everyone , This is Piyush from squad 49 of Kalvium x Rv University. This is my project about Students managing their notes in an effective manner. I also added different featured like embeding YouTube videos, voice recordings, Images etc as students requires. 
+* * *
+###### Backend Deployment Link -> 
+https://s49-piyush-capstone-greatnotes.onrender.com
