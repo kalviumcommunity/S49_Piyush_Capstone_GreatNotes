@@ -1,0 +1,36 @@
+#logoImg{
+    position: absolute;
+    left: 0;
+    top: 100px;
+    height: 500px;
+    width: 100%;
+    color: white;
+    background-size: cover;
+    background-image: url("https://images.ctfassets.net/lzny33ho1g45/66zDmwVz2N4aN4k589RRjB/36f5339cd45ed61b6560292a696e91d5/notes?w=1400");
+}
+
+#logoSec{
+    position: absolute;
+    left: 0;
+    top: 100px;
+    height: 500px;
+    width: 100%;
+    display: grid;
+}
+
+#Logo{
+    height: 150px;
+    top: 100px;
+
+    position: relative;
+}
+
+#blackFilter{
+    position: absolute;
+    left: 0;
+    top: 100px;
+    height: 500px;
+    width: 100%;
+    background-color: white;
+    opacity: 20%;
+}
