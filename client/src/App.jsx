@@ -1,9 +1,14 @@
 import React from 'react'
 import './App.css'
+import { BrowserRouter, Routes, Route,Link } from 'react-router-dom';
 import logo from"./images/logo.png"
+import NotesSection from './components/NotesSection'
+import HomeSection from './components/HomeSection';
+import AboutUsSection from "./components/AboutUsSection"
 
 function App() {
   return (
+    <BrowserRouter>
     <>
       <nav>
         <div id='navbar'>
@@ -11,9 +16,9 @@ function App() {
             <img src={logo} />
           </div>
           <div id='links'>
-            <h6>HOME</h6>
-            <h6>ABOUT US</h6>
-            <h6>NOTES</h6>
+            <Link to="/" style={{color:'black'}}><h6>HOME</h6></Link>
+            <Link to="/aboutus" style={{color:'black'}}><h6>ABOUT US</h6></Link>
+            <Link to="/notes" style={{color:'black'}}><h6>NOTES</h6></Link>
           </div>
           <div id='accountSec'>
             <div id='accountImg'>
@@ -26,23 +31,13 @@ function App() {
           </div>
         </div>
       </nav>
-      <div id="createNotesImg" />
-      <div id="createNotesBlackCover" />
-      <div id="createNotes">
-        <h1>Notes Section.....</h1>
-        <button>Create New Notes</button>
-      </div>
-      <div id='notesSearch'>
-        <div id='SearchBar'>
-          <input type="text" placeholder='Search Notes...' />
-        </div>
-        <div id='sort'>
-          <select id="sortBtn">
-            <option>Sort By</option>
-          </select>
-        </div>
-      </div>
+      <Routes>
+        <Route path='/' element={<HomeSection />}/>
+        <Route path='/aboutus' element={<AboutUsSection />}/>
+        <Route path='/notes' element={<NotesSection />}/>
+      </Routes>
     </>
+    </BrowserRouter>
   )
 }
 
