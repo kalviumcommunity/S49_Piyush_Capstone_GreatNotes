@@ -1,3 +1,8 @@
+#home{
+    height: 1050px;
+    background-color: white;
+    width: 100%;
+}
 #logoImg{
     position: absolute;
     left: 0;
@@ -19,18 +24,60 @@
 }
 
 #Logo{
-    height: 150px;
+    height: 210px;
     top: 100px;
 
     position: relative;
 }
 
-#blackFilter{
+#blackFilter1{
     position: absolute;
     left: 0;
     top: 100px;
     height: 500px;
     width: 100%;
     background-color: white;
-    opacity: 20%;
+    opacity: 50%;
+}
+
+#intro{
+    position: absolute;
+    width: 98.7%;
+    left: 0;
+    top: 600px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* border: 10px solid ;     */
+    
+}
+
+#intro h1{
+    font-size: 70px;
+}
+
+#intro p{
+    position: relative;
+    font-size: 25px;
+    left: 50px;
+    width: 95%;
+    text-align: left;
+}
+
+#features{
+    position: absolute;
+    left: 0;
+    height: 850px;
+    width: 100%;
+    top: 950px;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrJEOGZFH0ZoCs05OXceoMUuxsQARdVGdmkcs_RdEUMg&s");
+    background-size: cover;
+}
+
+#blackFilter2{
+    position: absolute;
+    left: 0;
+    top: 950px;
+    height: 850px;
+    width: 100%;
+    background-color: black;
+    opacity: 15%;
 }
