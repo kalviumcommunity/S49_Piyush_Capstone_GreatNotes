@@ -1,12 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 #home{
     height: 1050px;
     background-color: white;
     width: 100%;
 }
+
 #logoImg{
     position: absolute;
     left: 0;
-    top: 100px;
+    top: 80px;
     height: 500px;
     width: 100%;
     color: white;
@@ -26,14 +28,13 @@
 #Logo{
     height: 210px;
     top: 100px;
-
     position: relative;
 }
 
 #blackFilter1{
     position: absolute;
     left: 0;
-    top: 100px;
+    top: 80px;
     height: 500px;
     width: 100%;
     background-color: white;
@@ -44,14 +45,13 @@
     position: absolute;
     width: 98.7%;
     left: 0;
-    top: 600px;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    /* border: 10px solid ;     */
-    
+    top: 600px;    
 }
 
 #intro h1{
-    font-size: 70px;
+    position: relative;
+    left: 50px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 #intro p{
@@ -60,24 +60,39 @@
     left: 50px;
     width: 95%;
     text-align: left;
+    font-family: "Source Code Pro", monospace;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
 }
 
-#features{
+#featuresImg{
     position: absolute;
     left: 0;
-    height: 850px;
+    height: 100%;
     width: 100%;
     top: 950px;
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrJEOGZFH0ZoCs05OXceoMUuxsQARdVGdmkcs_RdEUMg&s");
+    background-image: url("https://miro.medium.com/v2/resize:fit:625/1*4r4x8mggXOEYz1vU7tCdAw.jpeg");
     background-size: cover;
+    color: white;
 }
 
 #blackFilter2{
     position: absolute;
     left: 0;
     top: 950px;
-    height: 850px;
+    height: 100%;
     width: 100%;
     background-color: black;
-    opacity: 15%;
+    opacity: 70%;
+}
+
+#features{
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    top: 950px;
+    color: white;
+    font-size: 40px;
 }

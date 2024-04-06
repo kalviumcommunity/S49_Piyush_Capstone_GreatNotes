@@ -19,10 +19,11 @@ export default function HomeSection() {
         <h1>What is Great Notes ??</h1>
         <p>GreatNotes is a simple and intuitive web application designed to help students manage their notes. It allows users to create, edit, and organize their notes in a convenient and  user-friendly interface. However, it is not just an ordinary note-taking application. It offers several features that make it a powerful tool for managing notes.</p>
       </div>
-      {/* <div id='features'>
-        vnejkngwegugbreijgij hgoerhiuwgjer euoghurehg erughuerhg iuerghuoh uerg uer uhg eu hu uer  8rehegherh uoh   
+      <div id='featuresImg' />
+      <div id='blackFilter2' />
+      <div id="features" >
+        <b>How is it different from other Note taking applications ??</b>
       </div>
-      <div id='blackFilter2' /> */}
     </div>
   )
 }
