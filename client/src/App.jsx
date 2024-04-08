@@ -5,6 +5,7 @@ import logo from"./images/logo.png"
 import NotesSection from './components/NotesSection'
 import HomeSection from './components/HomeSection';
 import AboutUsSection from "./components/AboutUsSection"
+import NotesPage from "./components/notesComponents/NotesPage"
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         <Route path='/' element={<HomeSection />}/>
         <Route path='/aboutus' element={<AboutUsSection />}/>
         <Route path='/notes' element={<NotesSection />}/>
+        <Route path='/notes/Createnotepage' element={<NotesPage />}/>
       </Routes>
     </>
     </BrowserRouter>
