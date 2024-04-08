@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 export default function NotesSection() {
   return (
@@ -7,7 +8,7 @@ export default function NotesSection() {
       <div id="createNotesBlackCover" />
       <div id="createNotes">
         <h1>Notes Section.....</h1>
-        <button>Create New Notes</button>
+        <Link to="/notes/Createnotepage"><button>Create New Notes</button></Link>
       </div>
       <div id='notesSearch'>
         <div id='SearchBar'>
