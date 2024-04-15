@@ -6,6 +6,7 @@ import NotesSection from './components/NotesSection'
 import HomeSection from './components/HomeSection';
 import AboutUsSection from "./components/AboutUsSection"
 import NotesPage from "./components/notesComponents/NotesPage"
+import AddText from './components/notesComponents/AddText';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
       <nav>
         <div id='navbar'>
           <div id="logo">
-            <img src={logo} />
+            <Link to="/notes"><img src={logo} /></Link>
           </div>
           <div id='links'>
             <Link to="/" style={{color:'black'}}><h6>HOME</h6></Link>
@@ -37,6 +38,7 @@ function App() {
         <Route path='/aboutus' element={<AboutUsSection />}/>
         <Route path='/notes' element={<NotesSection />}/>
         <Route path='/notes/Createnotepage' element={<NotesPage />}/>
+        <Route path='/notes/Createnotepage/addText' element={<AddText/>}/>
       </Routes>
     </>
     </BrowserRouter>
