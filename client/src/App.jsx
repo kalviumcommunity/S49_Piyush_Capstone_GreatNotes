@@ -7,6 +7,9 @@ import HomeSection from './components/HomeSection';
 import AboutUsSection from "./components/AboutUsSection"
 import NotesPage from "./components/notesComponents/NotesPage"
 import AddText from './components/notesComponents/AddText';
+import AddYoutubeVideo from './components/notesComponents/AddYoutubeVideo';
+import AddVoiceRecording from './components/notesComponents/AddVoiceRecording';
+import AddImages from './components/notesComponents/AddImages';
 
 function App() {
   return (
@@ -39,6 +42,9 @@ function App() {
         <Route path='/notes' element={<NotesSection />}/>
         <Route path='/notes/Createnotepage' element={<NotesPage />}/>
         <Route path='/notes/Createnotepage/addText' element={<AddText/>}/>
+        <Route path='/notes/Createnotepage/addYoutube' element={<AddYoutubeVideo/>}/>
+        <Route path='/notes/Createnotepage/addVoiceRecording' element={<AddVoiceRecording/>}/>
+        <Route path='/notes/Createnotepage/addImages' element={<AddImages/>}/>
       </Routes>
     </>
     </BrowserRouter>
