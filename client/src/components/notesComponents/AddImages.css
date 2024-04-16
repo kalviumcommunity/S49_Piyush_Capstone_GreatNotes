@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=K2D&display=swap');
+#AddImagesHead{
+    font-family: "K2D", sans-serif;
+}
+#AddImagesSection{
+    width: 100%;
+}
+#addImagesBox{
+    position: absolute;
+    left: 0;
+    width: 100%;
+}
+#ImagesLink{
+    width: 90%;
+    height: 40px;
+    background-color: white;
+    border: 4px solid black;
+    border-top: 0px;
+    color: black;
+    font-size: 30px;
+}
+#AddImagesBtn{
+    position: absolute;
+    top: 80%;
+    color: black;
+    background-color: white;
+    border: 1px solid;
+    border-radius: 50px;
+    left: 45%;
+}
+#image{
+    height: 22px;
+}
+#subTopicImages{
+    width: 90%;
+    height: 40px;
+    background-color: white;
+    border: 4px solid black;
+    border-bottom: 2px solid;
+    color: black;
+    font-size: 30px;
+}
