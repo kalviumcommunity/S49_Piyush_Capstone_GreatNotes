@@ -1,52 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=K2D&display=swap');
-#addTextSection{
+#addDefinitionSection{
     width: 100%;
     background-color: white;
 }
-#addTextHead{
-    font-family: "K2D", sans-serif;
+#AddDefinitionHead{
+    font-family: "K2D" , sans-serif;
 }
-#addTextBox{
+#addDefinitionBox{
     width: 100%;
     position: absolute;
     left: 0;
 }
-#subTopicText{
+#subTopicDefinition{
     width: 90%;
     height: 40px;
     background-color: white;
     border: 4px solid black;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid;
     color: black;
     font-size: 30px;
 }
-#textContent{
+#textDefinition{
     width: 90%;
-    height: 250px;
+    height: 100px;
     background-color: white;
     border: 4px solid black;
     border-top: 0;
     color: black;
+    font-size: 20px;
     resize: none;
-    font-size: 15px;
 }
-#addTextArea{
-    width: 100%;
+#AddDefinitionBtn{
     position: absolute;
-    left: 0;
-    top: 180px;
-}
-#addTextBtn{
-    position: absolute;
-    top: 90%;
-    left: 45%;
-    background-color: white;
+    top: 85%;
     color: black;
+    background-color: white;
     border: 1px solid;
     border-radius: 50px;
-    top: 640px;
+    left: 45%;
 }
-
-#addTextBtn img{
-    height: 20px;
+#definition{
+    height: 21px;
+    position: relative;
+    top: 5px;
 }
