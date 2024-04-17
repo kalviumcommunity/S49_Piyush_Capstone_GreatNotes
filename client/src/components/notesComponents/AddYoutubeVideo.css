@@ -5,11 +5,16 @@
 }
 #AddYoutubeHead{
     font-family: "K2D", sans-serif;
+    position: absolute;
+    top: 150px;
+    width: 100% ;
+    left: 0;
 }
 #addYoutubeVideoBox{
     width: 100%;
     position: absolute;
     left: 0;
+    top: 350px;
 }
 #YoutubeVideoLink{
     width: 90%;
@@ -22,7 +27,7 @@
 }
 #AddYoutubeBtn{
     position: absolute;
-    top: 80%;
+    top: 600px;
     color: black;
     background-color: white;
     border: 1px solid;

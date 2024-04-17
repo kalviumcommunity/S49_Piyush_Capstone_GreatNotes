@@ -10,6 +10,8 @@ import AddText from './components/notesComponents/AddText';
 import AddYoutubeVideo from './components/notesComponents/AddYoutubeVideo';
 import AddVoiceRecording from './components/notesComponents/AddVoiceRecording';
 import AddImages from './components/notesComponents/AddImages';
+import AddDefinition from './components/notesComponents/AddDefinition';
+import AddSummary from './components/notesComponents/AddSummary';
 
 function App() {
   return (
@@ -45,6 +47,8 @@ function App() {
         <Route path='/notes/Createnotepage/addYoutube' element={<AddYoutubeVideo/>}/>
         <Route path='/notes/Createnotepage/addVoiceRecording' element={<AddVoiceRecording/>}/>
         <Route path='/notes/Createnotepage/addImages' element={<AddImages/>}/>
+        <Route path='/notes/Createnotepage/addDefinition' element={<AddDefinition/>}/>
+        <Route path='/notes/Createnotepage/addSummary' element={<AddSummary/>}/>
       </Routes>
     </>
     </BrowserRouter>
