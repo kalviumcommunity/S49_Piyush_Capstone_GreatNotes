@@ -6,9 +6,14 @@
     width: 100%;
     position: absolute;
     left: 0;
+    top: 350px;
 }
 #AddVoiceRecordingHead{
     font-family: "K2D", sans-serif;
+    position: absolute;
+    left: 0;
+    top: 180px;
+    width: 100%;
 }
 #VoiceRecordingLink{
     width: 90%;
@@ -21,7 +26,7 @@
 }
 #AddVoiceRecordingBtn{
     position: absolute;
-    top: 80%;
+    top: 570px;
     left: 40%;
     border-radius: 50px;
     color: black;

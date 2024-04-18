@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=K2D&display=swap');
 #AddImagesHead{
     font-family: "K2D", sans-serif;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    top: 180px;
 }
 #AddImagesSection{
     width: 100%;
@@ -9,6 +14,7 @@
     position: absolute;
     left: 0;
     width: 100%;
+    top: 350px;
 }
 #ImagesLink{
     width: 90%;
@@ -21,7 +27,7 @@
 }
 #AddImagesBtn{
     position: absolute;
-    top: 80%;
+    top: 550px;
     color: black;
     background-color: white;
     border: 1px solid;

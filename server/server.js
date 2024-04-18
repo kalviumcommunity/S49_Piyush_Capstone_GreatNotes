@@ -2,8 +2,10 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const port = process.env.PUBLIC_PORT || 3000;
+const cors = require("cors")
 require("dotenv").config();
 app.use(express.json());
+app.use(cors())
 
 const options = {
   useNewUrlParser: true,

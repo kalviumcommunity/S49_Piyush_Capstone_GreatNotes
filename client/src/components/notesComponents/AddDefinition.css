@@ -5,11 +5,16 @@
 }
 #AddDefinitionHead{
     font-family: "K2D" , sans-serif;
+    position: absolute;
+    top: 180px;
+    left: 0;
+    width: 100%;
 }
 #addDefinitionBox{
     width: 100%;
     position: absolute;
     left: 0;
+    top: 350px;
 }
 #subTopicDefinition{
     width: 90%;
@@ -32,7 +37,7 @@
 }
 #AddDefinitionBtn{
     position: absolute;
-    top: 85%;
+    top: 580px;
     color: black;
     background-color: white;
     border: 1px solid;

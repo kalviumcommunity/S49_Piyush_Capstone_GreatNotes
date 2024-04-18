@@ -1,10 +1,18 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
+import "./NotesSection.css"
+import axios from "axios" 
 
 export default function NotesSection() {
+  const [notesData,setNotesData] = useState([])
+  useEffect(()=>{
+    axios.get("http://localhost:3000/notes_data").then(j=>setNotesData(j.data))
+  },[])
+  console.log(notesData)
+  
   return (
     <div>
-        <div id="createNotesImg" />
+      <div id="createNotesImg" />
       <div id="createNotesBlackCover" />
       <div id="createNotes">
         <h1>Notes Section.....</h1>
@@ -19,6 +27,16 @@ export default function NotesSection() {
             <option>Sort By</option>
           </select>
         </div>
+      </div>
+      <div id='notesSection'>
+        {notesData.map((note) => (
+          <div key={note.id} id='notesBar'>
+            <img src="https://cdn-icons-png.flaticon.com/128/1828/1828778.png" id="deleteBtn" />
+            <h2>{note.title}</h2>
+            <p>Created on 18 April 2024 </p>
+          </div>
+        ))}
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
       </div>
     </div>
   )
