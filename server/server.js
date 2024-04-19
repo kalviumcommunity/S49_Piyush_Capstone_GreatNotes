@@ -39,6 +39,12 @@ app.get("/notes_data", async (req, res) => {
     res.json(v)
 })
 
+app.get("/notes_data/username",async(req,res)=>{
+  const username = await notesData.distinct('username')
+  const user = username.filter(username=>username)
+  res.json({username:user})
+})
+
 if (require.main === module) {
   app.listen(port, () => {
     console.log(`Server running on port: ${port}`);
