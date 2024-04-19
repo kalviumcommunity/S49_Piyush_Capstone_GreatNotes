@@ -39,10 +39,14 @@ app.get("/notes_data", async (req, res) => {
     res.json(v)
 })
 
+
 app.get("/notes_data/username",async(req,res)=>{
   const username = await notesData.distinct('username')
   const user = username.filter(username=>username)
   res.json({username:user})
+=======
+app.put('/',async(req,res)=>{
+  res.json({message:"Put Request Accepted.."})
 })
 
 if (require.main === module) {
