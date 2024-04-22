@@ -14,6 +14,7 @@ import AddDefinition from './components/notesComponents/AddDefinition';
 import AddSummary from './components/notesComponents/AddSummary';
 
 function App() {
+  const name = "qwerty";
   return (
     <BrowserRouter>
     <>
@@ -32,7 +33,7 @@ function App() {
               <img src="https://cdn-icons-png.flaticon.com/128/1144/1144760.png" />
             </div>
             <div id='accountDet'>
-              Hey Kai <br />
+              Hey {name} <br />
               <button id='Signout'>Sign out</button>
             </div>
           </div>
@@ -41,7 +42,7 @@ function App() {
       <Routes>
         <Route path='/' element={<HomeSection />}/>
         <Route path='/aboutus' element={<AboutUsSection />}/>
-        <Route path='/notes' element={<NotesSection />}/>
+        <Route path='/notes' element={<NotesSection name={name} />}/>
         <Route path='/notes/Createnotepage' element={<NotesPage />}/>
         <Route path='/notes/Createnotepage/addText' element={<AddText/>}/>
         <Route path='/notes/Createnotepage/addYoutube' element={<AddYoutubeVideo/>}/>

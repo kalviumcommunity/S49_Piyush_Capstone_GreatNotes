@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import "./NotesSection.css"
 import axios from "axios" 
 
-export default function NotesSection() {
+export default function NotesSection({name}) {
   const [notesData,setNotesData] = useState([])
   useEffect(()=>{
     axios.get("http://localhost:3000/notes_data").then(j=>setNotesData(j.data))
@@ -29,7 +29,7 @@ export default function NotesSection() {
         </div>
       </div>
       <div id='notesSection'>
-        {notesData.map((note) => (
+        {notesData.filter((i)=>i.username==name).map((note) => (
           <div key={note.id} id='notesBar'>
             <img src="https://cdn-icons-png.flaticon.com/128/1828/1828778.png" id="deleteBtn" />
             <h2>{note.title}</h2>
