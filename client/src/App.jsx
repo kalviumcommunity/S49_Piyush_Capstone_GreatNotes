@@ -14,7 +14,7 @@ import AddDefinition from './components/notesComponents/AddDefinition';
 import AddSummary from './components/notesComponents/AddSummary';
 
 function App() {
-  const name = "qwerty";
+  const name = "Piyush";
   return (
     <BrowserRouter>
     <>
@@ -36,6 +36,9 @@ function App() {
               Hey {name} <br />
               <button id='Signout'>Sign out</button>
             </div>
+          </div>
+          <div id='loginSec'>
+            <button>Login</button> <button>Sign Up</button>
           </div>
         </div>
       </nav>
