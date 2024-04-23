@@ -8,8 +8,8 @@ export default function NotesSection({name}) {
   useEffect(()=>{
     axios.get("http://localhost:3000/notes_data").then(j=>setNotesData(j.data))
   },[])
-  console.log(notesData)
-  
+  const titleArray = new Set(notesData.filter((i)=>i.username===name).map((j)=>j.title))
+  console.log(titleArray)
   return (
     <div>
       <div id="createNotesImg" />
@@ -29,10 +29,10 @@ export default function NotesSection({name}) {
         </div>
       </div>
       <div id='notesSection'>
-        {notesData.filter((i)=>i.username==name).map((note) => (
-          <div key={note.id} id='notesBar'>
+        {[...titleArray].map((note) => (
+          <div id='notesBar'>
             <img src="https://cdn-icons-png.flaticon.com/128/1828/1828778.png" id="deleteBtn" />
-            <h2>{note.title}</h2>
+            <h2>{note}</h2>
             <p>Created on 18 April 2024 </p>
           </div>
         ))}

@@ -52,6 +52,19 @@ nav{
   grid-template-columns: repeat(2,auto);
   gap: 20px;
   top: 10px;
+  display: none;
+}
+#loginSec{
+  position: absolute;
+  right: 50px;
+  top: 20px;
+}
+#loginSec button{
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 15px;
+  /* display: none; */
 }
 
 #accountImg img{
