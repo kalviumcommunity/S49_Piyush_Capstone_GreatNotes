@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import "./NotesSection.css"
 import axios from "axios" 
+import DeleteNotes from './notesComponents/DeleteNotes';
 
 export default function NotesSection({name}) {
   const [notesData,setNotesData] = useState([])
@@ -12,6 +13,7 @@ export default function NotesSection({name}) {
   console.log(titleArray)
   return (
     <div>
+      <DeleteNotes />
       <div id="createNotesImg" />
       <div id="createNotesBlackCover" />
       <div id="createNotes">
