@@ -13,8 +13,12 @@
 }
 
 #buttons{
+    position: absolute;
+    top: 180px;
+    left: 0px;
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(3,350px);
+    grid-template-columns: repeat(3,450px);
     gap: 30px;
 }
 #buttons button{
@@ -23,6 +27,7 @@
     border: 1px solid;
     font-size: 20px;
     border-radius: 50px;
+    width: 280px ;
 }
 
 #buttons button img{
