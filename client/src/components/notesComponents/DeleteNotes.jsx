@@ -1,13 +1,13 @@
 import React from 'react'
 import "./DeleteNotes.css"
 
-export default function DeleteNotes() {
+export default function DeleteNotes({topicName}) {
   return (
-    <div id='deleteModal'>
+    <div id='deleteModal' style={{display:"block"}}>
         <div id='deleteOption'>
-            <h2>Do You want to delete topic1 ?</h2>
+            <h2>Do you want to delete {topicName} ?</h2>
             <div>
-                <button>Delete</button> <button><u>Cancel</u></button>
+                <button id='deleteButton'>Delete</button> <button id='cancelButton'><u>Cancel</u></button>
             </div>
         </div>
     </div>

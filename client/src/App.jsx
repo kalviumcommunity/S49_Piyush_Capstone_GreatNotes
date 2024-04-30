@@ -12,6 +12,8 @@ import AddVoiceRecording from './components/notesComponents/AddVoiceRecording';
 import AddImages from './components/notesComponents/AddImages';
 import AddDefinition from './components/notesComponents/AddDefinition';
 import AddSummary from './components/notesComponents/AddSummary';
+import Login from './components/notesComponents/Login';
+import SignUp from './components/notesComponents/SignUp';
 
 function App() {
   const name = "Piyush";
@@ -38,7 +40,7 @@ function App() {
             </div>
           </div>
           <div id='loginSec'>
-            <button>Login</button> <button>Sign Up</button>
+            <Link to="/login"><button>Login</button></Link> <Link to="/signup"><button>Sign Up</button></Link>
           </div>
         </div>
       </nav>
@@ -53,6 +55,8 @@ function App() {
         <Route path='/notes/Createnotepage/addImages' element={<AddImages/>}/>
         <Route path='/notes/Createnotepage/addDefinition' element={<AddDefinition/>}/>
         <Route path='/notes/Createnotepage/addSummary' element={<AddSummary/>}/>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/signup' element={<SignUp/>}/>
       </Routes>
     </>
     </BrowserRouter>

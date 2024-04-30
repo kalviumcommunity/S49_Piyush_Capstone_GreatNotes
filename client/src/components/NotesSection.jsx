@@ -6,6 +6,7 @@ import DeleteNotes from './notesComponents/DeleteNotes';
 
 export default function NotesSection({name}) {
   const [notesData,setNotesData] = useState([])
+  const [deleteState,setDeleteState] = useState(false)
   useEffect(()=>{
     axios.get("http://localhost:3000/notes_data").then(j=>setNotesData(j.data))
   },[])
@@ -13,7 +14,6 @@ export default function NotesSection({name}) {
   console.log(titleArray)
   return (
     <div>
-      <DeleteNotes />
       <div id="createNotesImg" />
       <div id="createNotesBlackCover" />
       <div id="createNotes">
@@ -33,11 +33,15 @@ export default function NotesSection({name}) {
       <div id='notesSection'>
         {[...titleArray].map((note) => (
           <div id='notesBar'>
-            <img src="https://cdn-icons-png.flaticon.com/128/1828/1828778.png" id="deleteBtn" />
+            <img src="https://cdn-icons-png.flaticon.com/128/1828/1828778.png" id="deleteBtn" onClick={()=>{
+              setDeleteState(true)
+            }} />
             <h2>{note}</h2>
             <p>Created on 18 April 2024 </p>
+            <DeleteNotes topicName={note} />
           </div>
         ))}
+        
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
       </div>
     </div>
