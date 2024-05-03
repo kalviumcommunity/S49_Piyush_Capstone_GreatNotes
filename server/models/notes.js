@@ -2,6 +2,7 @@ const mongoose = require("mongoose")
 
 const notesSchema = new mongoose.Schema({
     username : String,
+    email: String,
     topic : String,
     sub_topic : String,
     text_notes : String,
@@ -10,7 +11,7 @@ const notesSchema = new mongoose.Schema({
     summary : String,
     voice_link : String,
     term : String,
-    definition : String
+    definition : String 
 })
 
 const note = mongoose.model("notes",notesSchema)
