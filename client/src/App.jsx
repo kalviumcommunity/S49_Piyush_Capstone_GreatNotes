@@ -12,8 +12,8 @@ import AddVoiceRecording from './components/notesComponents/AddVoiceRecording';
 import AddImages from './components/notesComponents/AddImages';
 import AddDefinition from './components/notesComponents/AddDefinition';
 import AddSummary from './components/notesComponents/AddSummary';
-import Login from './components/notesComponents/Login';
-import SignUp from './components/notesComponents/SignUp';
+import Login from './components/Login';
+import SignUp from './components/SignUp';
 
 function App() {
   const name = "Piyush";

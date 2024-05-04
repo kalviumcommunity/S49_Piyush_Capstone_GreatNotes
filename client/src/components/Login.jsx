@@ -11,7 +11,7 @@ export default function Login() {
           <label>Email or Username -</label><br />
           <input type="text" id='usernameEmailBox' /><br /><br />
           <label>Password -</label><br />
-          <input type="text" id='passwordBox' /><br />
+          <input type="password " id='passwordBox' /><br />
           <div id='showPass'>
             <input type="checkbox" id="showPasswordBox" /><h5 id='show'>Show Password</h5>
           </div>
