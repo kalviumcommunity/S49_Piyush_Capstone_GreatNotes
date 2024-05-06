@@ -33,6 +33,17 @@ app.get("/users_data", async (req, res) => {
     res.json(v)
 })
 
+app.post("/signup",async(req,res)=>{
+  let val = req.body;
+  console.log(val)
+  let loginData = await UserData.create({
+    username: val.username,
+    email:val.email,
+    password: val.password
+  });
+  res.json({message:"Login Done"})
+})
+
 const notesData = require("./models/notes"); 
 app.get("/notes_data", async (req, res) => {
     const v = await notesData.find();
