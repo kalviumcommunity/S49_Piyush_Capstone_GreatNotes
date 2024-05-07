@@ -2,39 +2,71 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import "./SignUp.css"
 import axios from 'axios';
-// import Joi from "joi";
 
 export default function SignUp() {
-  const [Username,setUsername] = useState('')
-  const [Email,setEmail] = useState('')
-  const [Password,setPassword] = useState('')
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  const viewPassword = ()=>{
+  const [errors, setErrors] = useState({});
+
+  const checkUsername = (username) =>{
+    if (username.trim()==='') {
+      return "Username is Required"
+    } else if (username.length < 6 || username.length > 13) {
+      return "Username should be between 6 and 13 characters"
+    } 
+  }
+
+  const checkEmail = (email) =>{
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+    if (email.trim() === '') {
+      return "Email is Required"
+    } else if (!emailRegex.test(email)) {
+      return "Invalid Email Address"
+    } 
+  }
+
+  const checkPassword = (password) =>{
+    if (password.trim() === '') {
+      return 'Password is required'
+    } else if (password.length < 6) {
+      return "Password should have min 6 characters."
+    }
+    return '';
+  };
+
+  const viewPassword = () =>{
     const x = document.getElementById("PasswordBox")
     if (x.type === 'password') {
-      x.type = 'text';
+      x.type = 'text'
     } else {
-      x.type = 'password';
+      x.type = 'password'
     }
   }
 
-  // const schema = Joi.object({
-  //   Username: Joi.string().min(6).max(15).required(),
-  //   Email: Joi.string().email().required(),
-  //   Password: Joi.string().required()
-  // })
-
-  const signupFunc = async(e)=>{
+  const signupFunc = async (e) =>{
     e.preventDefault()
-    // const data = {Username,Email,Password}
-    // const { error } = schema.validate(data)
-    // if(error){
-    //   console.log(error)
-    // }else{
-      const response = await axios.post("http://localhost:3000/signup",{username:Username,email:Email,password:Password})
-      console.log("Done")
-    // }
-  }
+
+    const errors = {}
+    const usernameError = checkUsername(username)
+    const emailError = checkEmail(email)
+    const passwordError = checkPassword(password)
+    if (usernameError) {
+      errors.username = usernameError
+    } else if (emailError) {
+      errors.email = emailError
+    }else if (passwordError) {
+      errors.password = passwordError
+    }
+
+    if (Object.keys(errors).length > 0) {
+      setErrors(errors);
+    } else {
+      const response = await axios.post("http://localhost:3000/signup", { username, email, password })
+      console.log("Logged in")
+    }
+  };
 
   return (
     <div id='signupPage'>
@@ -42,11 +74,14 @@ export default function SignUp() {
         <h1 id='signupHead'>Sign up</h1>
         <form>
           <label>Username -</label><br />
-          <input type="text" id="usernameBox" name='username' required  onChange={(e)=>setUsername(e.target.value)} /><br /><br />
+          <input type="text" id="usernameBox" name='username' required value={username} onChange={(e) => setUsername(e.target.value)} />
+          {errors.username && <div style={{ color: 'red' }}>{errors.username}</div>}<br /><br />
           <label>Email -</label><br />
-          <input type="email" id="emailBox" name='email' required onChange={(e)=>setEmail(e.target.value)}/><br /><br />
+          <input type="email" id="emailBox" name='email' required value={email} onChange={(e) => setEmail(e.target.value)} />
+          {errors.email && <div style={{ color: 'red' }}>{errors.email}</div>}<br /><br />
           <label>Password -</label><br />
-          <input type="password" id='PasswordBox' name='password'  onChange={(e)=>setPassword(e.target.value)}/>
+          <input type="password" id='PasswordBox' name='password' required value={password} onChange={(e) => setPassword(e.target.value)} />
+          {errors.password && <div style={{ color: 'red' }}>{errors.password}</div>}
           <div id='showPass'>
             <input type="checkbox" id="showPasswordBox" onClick={viewPassword} /><h5 id='show'>Show Password</h5>
           </div>
