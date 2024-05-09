@@ -52,7 +52,6 @@ nav{
   grid-template-columns: repeat(2,auto);
   gap: 20px;
   top: 10px;
-  display: none;
 }
 #loginSec{
   position: absolute;

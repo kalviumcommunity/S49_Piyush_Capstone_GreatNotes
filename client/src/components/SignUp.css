@@ -34,3 +34,7 @@
     font-weight: 600;
     font-size: 13px;
 }
+#error{
+    position: relative;
+    left: 30px;
+}

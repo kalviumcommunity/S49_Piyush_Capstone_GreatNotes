@@ -4,11 +4,13 @@ import "./SignUp.css"
 import axios from 'axios';
 
 export default function SignUp() {
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  
+  const [disableStatus,setDisableStatus] = useState(false)
 
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState({})
 
   const checkUsername = (username) =>{
     if (username.trim()==='') {
@@ -63,8 +65,15 @@ export default function SignUp() {
     if (Object.keys(errors).length > 0) {
       setErrors(errors);
     } else {
+      setDisableStatus(true)
+      localStorage.setItem('loggedInStatus',true)
       const response = await axios.post("http://localhost:3000/signup", { username, email, password })
       console.log("Logged in")
+      localStorage.setItem('username',username)
+      alert("You have Logged in...")
+      setTimeout(()=>{
+        window.location.href="/notes"
+      },2000)
     }
   };
 
@@ -75,18 +84,18 @@ export default function SignUp() {
         <form>
           <label>Username -</label><br />
           <input type="text" id="usernameBox" name='username' required value={username} onChange={(e) => setUsername(e.target.value)} />
-          {errors.username && <div style={{ color: 'red' }}>{errors.username}</div>}<br /><br />
+          {errors.username && <div id='error' style={{ color: 'red' }}>{errors.username}</div>}<br /><br />
           <label>Email -</label><br />
           <input type="email" id="emailBox" name='email' required value={email} onChange={(e) => setEmail(e.target.value)} />
-          {errors.email && <div style={{ color: 'red' }}>{errors.email}</div>}<br /><br />
+          {errors.email && <div id='error' style={{ color: 'red' }}>{errors.email}</div>}<br /><br />
           <label>Password -</label><br />
           <input type="password" id='PasswordBox' name='password' required value={password} onChange={(e) => setPassword(e.target.value)} />
-          {errors.password && <div style={{ color: 'red' }}>{errors.password}</div>}
+          {errors.password && <div id='error' style={{ color: 'red' }}>{errors.password}</div>}
           <div id='showPass'>
             <input type="checkbox" id="showPasswordBox" onClick={viewPassword} /><h5 id='show'>Show Password</h5>
           </div>
         </form><br />
-        <button id='signupBtn' onClick={signupFunc}>SIGN IN</button><br /><br />
+        <button id='signupBtn' onClick={signupFunc} disabled={disableStatus}>SIGN IN</button><br /><br />
         <button id='googleBtn'>Continue with Google <img src="https://cdn-icons-png.flaticon.com/128/300/300221.png" id="googleImg" /></button><br />
         <p id='loginLine'>Already Have an Account? <Link to="../login">Log In</Link></p><br />
       </div>

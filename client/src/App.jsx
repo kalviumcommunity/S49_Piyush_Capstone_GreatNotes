@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css'
-import { BrowserRouter, Routes, Route,Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import logo from"./images/logo.png"
 import NotesSection from './components/NotesSection'
 import HomeSection from './components/HomeSection';
@@ -16,7 +16,21 @@ import Login from './components/Login';
 import SignUp from './components/SignUp';
 
 function App() {
-  const name = "Piyush";
+  const [name,setName] = useState('')
+  const [loggedInStatus,setLoggedInStatus] = useState(false)
+  
+  useEffect(() => {
+    const loggedIn = localStorage.getItem('loggedInStatus');
+    if (loggedIn) {
+      setLoggedInStatus(true)
+      setName(localStorage.getItem('username'))
+    }
+  },[])
+
+  const signoutFunc=()=>{
+    localStorage.setItem('loggedInStatus',false)
+    setLoggedInStatus(false)
+  }
   return (
     <BrowserRouter>
     <>
@@ -30,18 +44,21 @@ function App() {
             <Link to="/aboutus" style={{color:'black'}}><h6>ABOUT US</h6></Link>
             <Link to="/notes" style={{color:'black'}}><h6>NOTES</h6></Link>
           </div>
+          {loggedInStatus?(
           <div id='accountSec'>
             <div id='accountImg'>
               <img src="https://cdn-icons-png.flaticon.com/128/1144/1144760.png" />
             </div>
             <div id='accountDet'>
               Hey {name} <br />
-              <button id='Signout'>Sign out</button>
+              <button id='Signout' onClick={signoutFunc}>Sign out</button>
             </div>
           </div>
+        ):(
           <div id='loginSec'>
             <Link to="/login"><button>Login</button></Link> <Link to="/signup"><button>Sign Up</button></Link>
           </div>
+        )}
         </div>
       </nav>
       <Routes>
