@@ -16,37 +16,36 @@ mongoose.connect(process.env.MONGO_URI, options)
 const dbConnectStatus = () => mongoose.connection.readyState === 1;
 
 app.get('/', (req, res) => {
-  res.json({ "dbConnectStatus": dbConnectStatus() });
-});
+  res.json({ "dbConnectStatus": dbConnectStatus() })
+})
 
 app.post('/', async (req, res) => {
-  res.json({ message: "Post Request Accepted.." });
-});
+  res.json({ message: "Post Request Accepted.." })
+})
 
 app.put('/', async (req, res) => {
-  res.json({ message: "Put Request Accepted.." });
-});
+  res.json({ message: "Put Request Accepted.." })
+})
 
-const UserData = require("./models/user"); 
+const UserData = require("./models/user") 
 app.get("/users_data", async (req, res) => {
-    const v = await UserData.find();
+    const v = await UserData.find()
     res.json(v)
 })
 
 app.post("/signup",async(req,res)=>{
-  let val = req.body;
-  console.log(val)
+  let val = req.body
   let loginData = await UserData.create({
     username: val.username,
     email:val.email,
     password: val.password
-  });
+  })
   res.json({message:"Login Done"})
 })
 
 const notesData = require("./models/notes"); 
 app.get("/notes_data", async (req, res) => {
-    const v = await notesData.find();
+    const v = await notesData.find()
     res.json(v)
 })
 
@@ -58,7 +57,7 @@ app.get("/notes_data/username",async(req,res)=>{
 
 if (require.main === module) {
   app.listen(port, () => {
-    console.log(`Server running on port: ${port}`);
+    console.log(`Server running on port: ${port}`)
   });
 }
 
