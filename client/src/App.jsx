@@ -20,7 +20,8 @@ function App() {
   const [loggedInStatus,setLoggedInStatus] = useState(false)
   
   useEffect(() => {
-    const loggedIn = localStorage.getItem('loggedInStatus');
+    const loggedIn = localStorage.getItem('loggedInStatus')
+    console.log("Logged in Status-",loggedIn)
     if (loggedIn) {
       setLoggedInStatus(true)
       setName(localStorage.getItem('username'))
@@ -30,6 +31,8 @@ function App() {
   const signoutFunc=()=>{
     localStorage.setItem('loggedInStatus',false)
     setLoggedInStatus(false)
+    localStorage.setItem('username',"")
+    setName("")
   }
   return (
     <BrowserRouter>
@@ -44,7 +47,7 @@ function App() {
             <Link to="/aboutus" style={{color:'black'}}><h6>ABOUT US</h6></Link>
             <Link to="/notes" style={{color:'black'}}><h6>NOTES</h6></Link>
           </div>
-          {loggedInStatus?(
+          {name?(
           <div id='accountSec'>
             <div id='accountImg'>
               <img src="https://cdn-icons-png.flaticon.com/128/1144/1144760.png" />
