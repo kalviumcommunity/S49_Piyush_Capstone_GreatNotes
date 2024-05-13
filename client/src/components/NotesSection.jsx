@@ -8,10 +8,8 @@ export default function NotesSection({name}) {
   const [notesData,setNotesData] = useState([])
   const [deleteState,setDeleteState] = useState(false)
   useEffect(()=>{
-    axios.get("http://localhost:3000/notes_data").then(j=>setNotesData(j.data))
+    axios.get("http://localhost:3000/notes_title").then(j=>setNotesData(j.data))
   },[])
-  const titleArray = new Set(notesData.filter((i)=>i.username===name).map((j)=>j.title))
-  console.log(titleArray)
   return (
     <div>
       <div id="createNotesImg" />
@@ -31,14 +29,14 @@ export default function NotesSection({name}) {
         </div>
       </div>
       <div id='notesSection'>
-        {[...titleArray].map((note) => (
+        {notesData.filter((i)=>i.username===name).map((note) => (
           <div id='notesBar'>
             <img src="https://cdn-icons-png.flaticon.com/128/1828/1828778.png" id="deleteBtn" onClick={()=>{
               setDeleteState(true)
             }} />
-            <h2>{note}</h2>
-            <p>Created on 18 April 2024 </p>
-            <DeleteNotes topicName={note} />
+            <h2>{note.title_name}</h2>
+            <p>Created on {note.date} </p>
+            <DeleteNotes topicName={note.title_name} />
           </div>
         ))}
         

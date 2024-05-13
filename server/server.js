@@ -43,7 +43,7 @@ app.post("/signup",async(req,res)=>{
   res.json({message:"Login Done"})
 })
 
-const notesData = require("./models/notes"); 
+const notesData = require("./models/notes")
 app.get("/notes_data", async (req, res) => {
     const v = await notesData.find()
     res.json(v)
@@ -60,10 +60,16 @@ app.put('/',async(req,res)=>{
   res.json({message:"Put Request Accepted.."})
 })
 
+const notesTitles = require("./models/notesTitle")
+app.get("/notes_title", async (req, res) => {
+  const titles = await notesTitles.find()
+  res.json(titles)
+})
+
 if (require.main === module) {
   app.listen(port, () => {
     console.log(`Server running on port: ${port}`)
-  });
+  })
 }
 
 module.exports = app;
