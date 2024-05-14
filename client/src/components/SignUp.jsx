@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import "./SignUp.css"
 import axios from 'axios';
@@ -11,6 +11,11 @@ export default function SignUp() {
   const [disableStatus,setDisableStatus] = useState(false)
 
   const [errors, setErrors] = useState({})
+  
+  const [emailData,setEmailData] = useState([])
+  useEffect(()=>{
+    axios.get("http://localhost:3000/users_data/emails").then((i)=>setEmailData(i.data.email))
+  },[])
 
   const checkUsername = (username) =>{
     if (username.trim()==='') {
@@ -26,7 +31,9 @@ export default function SignUp() {
       return "Email is Required"
     } else if (!emailRegex.test(email)) {
       return "Invalid Email Address"
-    } 
+    } else if(emailData.includes(email)){
+      return "This Email is already registered"
+    }
   }
 
   const checkPassword = (password) =>{
