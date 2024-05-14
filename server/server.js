@@ -33,6 +33,12 @@ app.get("/users_data", async (req, res) => {
     res.json(v)
 })
 
+app.get("/users_data/emails", async (req, res) => {
+  const emails = await UserData.distinct('email')
+  const user = emails.filter(email=>email)
+  res.json({email:user})
+});
+
 app.post("/signup",async(req,res)=>{
   let val = req.body
   let loginData = await UserData.create({
