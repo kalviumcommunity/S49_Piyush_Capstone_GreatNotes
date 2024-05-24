@@ -15,16 +15,16 @@ mongoose.connect(process.env.MONGO_URI, options)
 
 const dbConnectStatus = () => mongoose.connection.readyState === 1;
 
-app.get('/', (req, res) => {
-  res.json({ "dbConnectStatus": dbConnectStatus() })
+app.get("/",async(req,res)=>{
+  res.json({"Database_Connection_Status":dbConnectStatus()})
 })
 
-app.post('/', async (req, res) => {
-  res.json({ message: "Post Request Accepted.." })
+app.post("/",async(req,res)=>{
+  res.json({message: "Post Request is Accepted........"})
 })
 
-app.put('/', async (req, res) => {
-  res.json({ message: "Put Request Accepted.." })
+app.put("/",async(req,res)=>{
+  res.json({message: "Put Request is Accepted......"})
 })
 
 const UserData = require("./models/user") 
