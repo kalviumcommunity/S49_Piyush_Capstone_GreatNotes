@@ -14,9 +14,11 @@ import AddDefinition from './components/notesComponents/AddDefinition';
 import AddSummary from './components/notesComponents/AddSummary';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
+import NotesTitle from './components/notesComponents/NotesTitle';
 
 function App() {
   const [name,setName] = useState('')
+  const [email,setEmail] = useState('')
   const [loggedInStatus,setLoggedInStatus] = useState(false)
   
   useEffect(() => {
@@ -25,6 +27,7 @@ function App() {
     if (loggedIn) {
       setLoggedInStatus(true)
       setName(localStorage.getItem('username'))
+      setEmail(localStorage.getItem('email'))
     }
   },[])
 
@@ -67,7 +70,8 @@ function App() {
       <Routes>
         <Route path='/' element={<HomeSection />}/>
         <Route path='/aboutus' element={<AboutUsSection />}/>
-        <Route path='/notes' element={<NotesSection name={name} />}/>
+        <Route path='/notes' element={<NotesSection name={name} email={email} />}/>
+        <Route path='/notes/Createnotestitle' element={<NotesTitle/>}/>
         <Route path='/notes/Createnotepage' element={<NotesPage />}/>
         <Route path='/notes/Createnotepage/addText' element={<AddText/>}/>
         <Route path='/notes/Createnotepage/addYoutube' element={<AddYoutubeVideo/>}/>

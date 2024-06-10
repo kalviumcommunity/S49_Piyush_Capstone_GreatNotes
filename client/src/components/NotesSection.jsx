@@ -4,7 +4,7 @@ import "./NotesSection.css"
 import axios from "axios" 
 import DeleteNotes from './notesComponents/DeleteNotes';
 
-export default function NotesSection({name}) {
+export default function NotesSection({name,email}) {
   const [notesData,setNotesData] = useState([])
   const [deleteState,setDeleteState] = useState(false)
   useEffect(()=>{
@@ -16,7 +16,7 @@ export default function NotesSection({name}) {
       <div id="createNotesBlackCover" />
       <div id="createNotes">
         <h1>Notes Section.....</h1>
-        <Link to="/notes/Createnotepage"><button>Create New Notes</button></Link>
+        <Link to="/notes/Createnotestitle"><button>Create New Notes</button></Link>
       </div>
       <div id='notesSearch'>
         <div id='SearchBar'>
@@ -29,7 +29,7 @@ export default function NotesSection({name}) {
         </div>
       </div>
       <div id='notesSection'>
-        {notesData.filter((i)=>i.username===name).map((note) => (
+        {notesData.filter((i)=>{i.email===email}).map((note) => (
           <div id='notesBar'>
             <img src="https://cdn-icons-png.flaticon.com/128/1828/1828778.png" id="deleteBtn" onClick={()=>{
               setDeleteState(true)
@@ -39,7 +39,7 @@ export default function NotesSection({name}) {
             <DeleteNotes topicName={note.title_name} />
           </div>
         ))}
-        
+
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
       </div>
     </div>
