@@ -75,13 +75,10 @@ export default function SignUp() {
       setDisableStatus(true)
       localStorage.setItem('loggedInStatus',true)
       const response = await axios.post("http://localhost:3000/signup", { username, email, password })
-      console.log("Logged in")
       localStorage.setItem('username',username)
       localStorage.setItem('email',email)
       alert("You have Logged in...")
-      setTimeout(()=>{
-        window.location.href="/notes"
-      },2000)
+      window.location.href = "/notes"
     }
   };
 

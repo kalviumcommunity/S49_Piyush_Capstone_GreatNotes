@@ -49,6 +49,17 @@ app.post("/signup",async(req,res)=>{
   res.json({message:"Login Done"})
 })
 
+app.post("/login",async(req,res)=>{
+  let val = req.body
+  let vb = await UserData.findOne({email:val.email}).then(user=>{if(user){
+    if(user.password===val.password){
+      res.json({access:"AccessGranted",username:user.username})
+    } else{
+      res.json({access:"AccessDenied"})
+    }
+  }})
+})
+
 const notesData = require("./models/notes")
 app.get("/notes_data", async (req, res) => {
     const v = await notesData.find()
