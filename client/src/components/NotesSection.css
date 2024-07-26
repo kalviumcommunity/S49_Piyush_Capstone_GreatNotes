@@ -79,13 +79,14 @@
 }
 
 #notesBar{
-  border: 3px solid;  
+  border:black 3px solid;  
   border-radius: 20px;
   width: 250px;
   position: relative;
   left: 40px;
   top: 50px;
   height: 120px;
+  color: black;
 }
 #deleteBtn{
   height: 15px;
