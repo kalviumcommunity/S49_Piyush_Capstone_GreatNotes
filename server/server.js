@@ -83,6 +83,28 @@ app.get("/notes_title", async (req, res) => {
   res.json(titles)
 })
 
+app.post("/add_title", async (req, res) => { 
+  let titleVal = req.body
+  let titles = await notesTitles.create({
+    username:titleVal.username,
+    email:titleVal.email,
+    title_name:titleVal.title_name,
+    date:titleVal.date
+  })
+  res.send("done")  
+})
+
+app.post("/title/:id",(req,res)=>{
+  const id = req.params.id;
+  notesTitles.findById(id).then((data)=>{
+    res.json({
+      titleName: data.title_name,
+      email: data.email,
+      uname: data.username
+    })
+  })
+})
+
 if (require.main === module) {
   app.listen(port, () => {
     console.log(`Server running on port: ${port}`)

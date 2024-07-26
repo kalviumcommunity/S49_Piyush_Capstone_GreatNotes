@@ -36,6 +36,8 @@ function App() {
     setLoggedInStatus(false)
     localStorage.setItem('username',"")
     setName("")
+    localStorage.setItem('email',"")
+    window.location.href="/notes"
   }
   return (
     <BrowserRouter>
@@ -70,15 +72,15 @@ function App() {
       <Routes>
         <Route path='/' element={<HomeSection />}/>
         <Route path='/aboutus' element={<AboutUsSection />}/>
-        <Route path='/notes' element={<NotesSection name={name} email={email} />}/>
+        <Route path='/notes' element={<NotesSection email={email} />}/>
         <Route path='/notes/Createnotestitle' element={<NotesTitle/>}/>
-        <Route path='/notes/Createnotepage' element={<NotesPage />}/>
-        <Route path='/notes/Createnotepage/addText' element={<AddText/>}/>
-        <Route path='/notes/Createnotepage/addYoutube' element={<AddYoutubeVideo/>}/>
-        <Route path='/notes/Createnotepage/addVoiceRecording' element={<AddVoiceRecording/>}/>
-        <Route path='/notes/Createnotepage/addImages' element={<AddImages/>}/>
-        <Route path='/notes/Createnotepage/addDefinition' element={<AddDefinition/>}/>
-        <Route path='/notes/Createnotepage/addSummary' element={<AddSummary/>}/>
+        <Route path='/notes/Notepage/:id' element={<NotesPage />}/>
+        <Route path='/notes/Notepage/:id/addText' element={<AddText/>}/>
+        <Route path='/notes/Notepage/:id/addYoutube' element={<AddYoutubeVideo/>}/>
+        <Route path='/notes/Notepage/:id/addVoiceRecording' element={<AddVoiceRecording/>}/>
+        <Route path='/notes/Notepage/:id/addImages' element={<AddImages/>}/>
+        <Route path='/notes/Notepage/:id/addDefinition' element={<AddDefinition/>}/>
+        <Route path='/notes/Notepage/:id/addSummary' element={<AddSummary/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/signup' element={<SignUp/>}/>
       </Routes>
