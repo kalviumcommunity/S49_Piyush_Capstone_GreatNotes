@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import "./NotesPage.css"
 import { Link, useParams } from 'react-router-dom'
 import axios from 'axios'
-import NotesTitle from './NotesTitle'
+// import NotesTitle from './NotesTitle'
 
 export default function NotesPage() {
   const { id } = useParams()
@@ -27,11 +27,20 @@ export default function NotesPage() {
           <div><Link to={`/notes/Notepage/${id}/addDefinition`}><button>Add Definition <img src="https://cdn-icons-png.flaticon.com/128/5027/5027435.png" /></button></Link></div>
           <div><Link to={`/notes/Notepage/${id}/addSummary`}><button>Add Summary <img src="https://cdn-icons-png.flaticon.com/128/1474/1474686.png" /></button></Link></div>
         </div>
-        <div>
+        <div id='dataBox'>
           {notesData.filter(i=>i.email===email).filter(i=>i.topic==noteTitle).map((note)=>(
             <div>
-              sub topic -{note.sub_topic}
-              Youtube link -{note.youtube_link}
+              <br />
+            <div id='mainBox'>
+              <div id='subTopicBox'><b>{note.sub_topic} -</b></div><br />
+              <div id='noteContent'>{note.text_notes}</div>
+              <div id='noteContent'>{note.summary}</div>
+              <div id='noteContent'><img src={note.image_link} /></div>
+              <div id='noteContent'><iframe width="560" height="315" src={`https://www.youtube.com/embed/${note.youtube_link}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+              <div id=''></div>
+              <br />
+            </div>
+            <br /><br />
             </div>
           ))}
         </div>
