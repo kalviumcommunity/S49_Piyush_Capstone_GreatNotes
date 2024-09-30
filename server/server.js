@@ -28,6 +28,10 @@ app.put("/",async(req,res)=>{
 })
 
 const UserData = require("./models/user") 
+const notesData = require("./models/notes")
+const notesTitles = require("./models/notesTitle")
+
+//all get Api Requests
 app.get("/users_data", async (req, res) => {
     const v = await UserData.find()
     res.json(v)
@@ -39,6 +43,24 @@ app.get("/users_data/emails", async (req, res) => {
   res.json({email:user})
 });
 
+app.get("/notes_data", async (req, res) => {
+  const v = await notesData.find()
+  res.json(v)
+})
+
+app.get("/notes_data/username",async(req,res)=>{
+const username = await notesData.distinct('username')
+const user = username.filter(username=>username)
+res.json({username:user})
+})
+
+app.get("/notes_title", async (req, res) => {
+const titles = await notesTitles.find()
+res.json(titles)
+})
+
+
+//all Post Api requests
 app.post("/signup",async(req,res)=>{
   let val = req.body
   let loginData = await UserData.create({
@@ -58,29 +80,6 @@ app.post("/login",async(req,res)=>{
       res.json({access:"AccessDenied"})
     }
   }})
-})
-
-const notesData = require("./models/notes")
-app.get("/notes_data", async (req, res) => {
-    const v = await notesData.find()
-    res.json(v)
-})
-
-
-app.get("/notes_data/username",async(req,res)=>{
-  const username = await notesData.distinct('username')
-  const user = username.filter(username=>username)
-  res.json({username:user})
-})
-        
-app.put('/',async(req,res)=>{
-  res.json({message:"Put Request Accepted.."})
-})
-
-const notesTitles = require("./models/notesTitle")
-app.get("/notes_title", async (req, res) => {
-  const titles = await notesTitles.find()
-  res.json(titles)
 })
 
 app.post("/add_title", async (req, res) => { 
@@ -104,6 +103,7 @@ app.post("/title/:id",(req,res)=>{
     })
   })
 })
+
 
 if (require.main === module) {
   app.listen(port, () => {
