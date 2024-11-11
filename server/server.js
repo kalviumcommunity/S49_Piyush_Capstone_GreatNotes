@@ -104,6 +104,72 @@ app.post("/title/:id",(req,res)=>{
   })
 })
 
+app.post("/add_data/addtext",async(req,res)=>{
+  let data = req.body;
+  let d = await notesData.create({
+    username : data.username,
+    email: data.email,
+    topic : data.topic,
+    sub_topic : data.subTopic,
+    text_notes : data.textNotes,
+  })
+})
+
+app.post("/add_data/addyoutubevideo",async(req,res)=>{
+  let data = req.body;
+  let d = await notesData.create({
+    username : data.username,
+    email: data.email,
+    topic : data.topic,
+    sub_topic : data.subTopic,
+    youtube_link : data.youtubeLink
+  })
+})
+
+app.post("/add_data/addvoicerecording",async(req,res)=>{
+  let data = req.body;
+  let d = await notesData.create({
+    username : data.username,
+    email: data.email,
+    topic : data.topic,
+    sub_topic : data.subTopic,
+    voice_link : data.voiceRecordingLink
+  })
+})
+
+app.post("/add_data/addImages",async(req,res)=>{
+  let data = req.body;
+  let d = await notesData.create({
+    username : data.username,
+    email: data.email,
+    topic : data.topic,
+    sub_topic : data.subTopic,
+    image_link : data.imageLink
+  })
+})
+
+app.post("/add_data/adddefinition",async(req,res)=>{
+  let data = req.body;
+  let d = await notesData.create({
+    username : data.username,
+    email: data.email,
+    topic : data.topic,
+    sub_topic : data.subTopic,
+    term : data.wordTerm,
+    definition : data.definition
+  })
+})
+
+app.post("/add_data/addSummary",async(req,res)=>{
+  let data = req.body;
+  let d = await notesData.create({
+    username : data.username,
+    email: data.email,
+    topic : data.topic,
+    sub_topic : data.subTopic,
+    summary : data.summary,
+  })
+})
 
 if (require.main === module) {
   app.listen(port, () => {

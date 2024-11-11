@@ -36,11 +36,12 @@ export default function NotesPage() {
               <div id='noteContent'>{note.text_notes}</div>
               <div id='noteContent'>{note.summary}</div>
               <div id='noteContent'><img src={note.image_link} /></div>
-              <div id='noteContent'><iframe width="560" height="315" src={`https://www.youtube.com/embed/${note.youtube_link}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-              <div id=''></div>
+              {note.youtube_link && (<div id='noteContent'><iframe width="560" height="315" src={`https://www.youtube.com/embed/${note.youtube_link}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>)}
+              <div id='termTitle'>{note.term}</div>
+              <div id='noteContent'>{note.definition}</div>
               <br />
             </div>
-            <br /><br />
+            <br />
             </div>
           ))}
         </div>
