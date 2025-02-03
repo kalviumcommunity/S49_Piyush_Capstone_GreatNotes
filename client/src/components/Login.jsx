@@ -30,7 +30,7 @@ export default function Login() {
 
   const loginFunc = (e)=>{
     e.preventDefault()
-    axios.post("http://localhost:3000/login",{email:email,password:password}).then(access=>{
+    axios.post("https://s49-piyush-capstone-greatnotes.onrender.com/login",{email:email,password:password}).then(access=>{
       if(access.data.access === "AccessGranted"){
         console.log(access.data.username)
         localStorage.setItem('username',access.data.username)

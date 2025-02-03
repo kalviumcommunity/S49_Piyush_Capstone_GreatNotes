@@ -14,7 +14,7 @@ export default function SignUp() {
   
   const [emailData,setEmailData] = useState([])
   useEffect(()=>{
-    axios.get("http://localhost:3000/users_data/emails").then((i)=>setEmailData(i.data.email))
+    axios.get("https://s49-piyush-capstone-greatnotes.onrender.com/users_data/emails").then((i)=>setEmailData(i.data.email))
   },[])
 
   const checkUsername = (username) =>{
@@ -74,7 +74,7 @@ export default function SignUp() {
     } else {
       setDisableStatus(true)
       localStorage.setItem('loggedInStatus',true)
-      const response = await axios.post("http://localhost:3000/signup", { username, email, password })
+      const response = await axios.post("https://s49-piyush-capstone-greatnotes.onrender.com/signup", { username, email, password })
       localStorage.setItem('username',username)
       localStorage.setItem('email',email)
       alert("You have Logged in...")
