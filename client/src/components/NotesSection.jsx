@@ -8,7 +8,7 @@
     const [notesData,setNotesData] = useState([])
     const [deleteState,setDeleteState] = useState(false)
     useEffect(()=>{
-      axios.get("http://localhost:3000/notes_title").then(j=>setNotesData(j.data))
+      axios.get("https://s49-piyush-capstone-greatnotes.onrender.com/notes_title").then(j=>setNotesData(j.data))
     },[])
     return (
       <div>

@@ -11,10 +11,10 @@ export default function NotesPage() {
   const [username,setUsername]=useState("")
   const [notesData,setNotesData]=useState([])
   useEffect(()=>{
-    axios.post(`http://localhost:3000/title/${id}`).then((a)=>(setEmail(a.data.email),setUsername(a.data.uname),setNoteTitle(a.data.titleName)))
+    axios.post(`https://s49-piyush-capstone-greatnotes.onrender.com/title/${id}`).then((a)=>(setEmail(a.data.email),setUsername(a.data.uname),setNoteTitle(a.data.titleName)))
   },[])
   useEffect(()=>{
-    axios.get("http://localhost:3000/notes_data").then((b)=>setNotesData(b.data))
+    axios.get("https://s49-piyush-capstone-greatnotes.onrender.com/notes_data").then((b)=>setNotesData(b.data))
   },[])
   return (
     <div>

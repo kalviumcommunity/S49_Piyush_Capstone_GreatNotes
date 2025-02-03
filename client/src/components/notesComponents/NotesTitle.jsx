@@ -12,7 +12,7 @@ export default function NotesTitle() {
   const finalDate = `${month} ${date} ${year}`
   const addNoteTitle = (e) => {
     if(noteTitle){
-      axios.post("http://localhost:3000/add_title",{username:localStorage.getItem("username"),email:localStorage.getItem("email"),title_name:noteTitle,date:finalDate}).then(()=>console.log("done"))
+      axios.post("https://s49-piyush-capstone-greatnotes.onrender.com/add_title",{username:localStorage.getItem("username"),email:localStorage.getItem("email"),title_name:noteTitle,date:finalDate}).then(()=>console.log("done"))
       window.location.href ="/notes"
     } else{
       alert("Enter the Notes Title...")
