@@ -40,6 +40,7 @@ export default function Login() {
       } else if(access.data.access === "AccessDenied"){
         alert("Either Email or Password is incorrect...")
       }
+      window.location.href = "../notes";
     })
   }
 

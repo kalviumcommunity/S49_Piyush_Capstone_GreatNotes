@@ -78,7 +78,7 @@ export default function SignUp() {
       localStorage.setItem('username',username)
       localStorage.setItem('email',email)
       alert("You have Logged in...")
-      window.location.href = "/notes"
+      window.location.href = "../notes";
     }
   };
 
