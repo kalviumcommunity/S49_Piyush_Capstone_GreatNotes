@@ -20,3 +20,6 @@ Hey Everyone , This is Piyush from squad 49 of Kalvium x Rv University. This is 
 * * *
 ###### Backend Deployment Link -> 
 https://s49-piyush-capstone-greatnotes.onrender.com
+* * *
+###### Frontend Deployment Link ->
+https://capable-gecko-03c342.netlify.app 
